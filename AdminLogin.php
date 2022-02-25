@@ -20,18 +20,36 @@
             <div class="square" style="--i:4;"></div>
             <div class="container">
                 <div class="form">
-                    <form>
+                    <form method="post">
                         <h2>Admin Login</h2>
                         <form>
                             <div class="inputbox">
-                                <input type="text" placeholder="Username">
+                                <input type="text" placeholder="Username" name="username">
                             </div>
                             <div class="inputbox">
-                                <input type="password" placeholder="Password">
+                                <input type="password" placeholder="Password" name="password">
                             </div>
                             <div class="inputbox">
-                                <input type="submit" value="Login">
+                                <input type="submit" value="Login" name="Submit">
                             </div>
+                            <?php 
+                                if(isset($_POST['Submit']))
+                                {
+                                    $username = $_POST['username'];
+                                    $password = $_POST['password'];
+
+                                    if($username == "amzad786" and $password == "Amzad@123")
+                                    {
+                                        header("Location:Admin.php");
+                                        exit();
+                                    }
+                                    else
+                                    {
+                                        echo "<p>Invalid Username or Password</p>";
+                                    }
+                                }
+
+                            ?>
                         </form>
                     </form>
                 </div>
@@ -40,3 +58,4 @@
     </section>
 </body>
 </html>
+
