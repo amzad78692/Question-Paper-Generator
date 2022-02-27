@@ -15,7 +15,7 @@
             <img src="./Images/Admin-Logo.png" alt="Admin">
         </div>
         <div class="main">
-            <a href="#">Id for exam dept</a>
+            <a href="IdExamDept.php">Id for exam dept</a>
             <a href="#">Generate ques paper</a>
             <a href="#">View ques paper</a>
             <a href="#">Change own password</a>
