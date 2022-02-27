@@ -8,27 +8,28 @@
        <title>About</title>
 </head>
 <body>
-      <div class="container">
-         <h1 id="heading">About</h1>
-         
-            <div class="box">
-            <div id="logo">
-       <img src="./Image/bmwlogo.png" alt="image">
-     </div>
-              <div class="box2">
-              <p Id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit            
-              voluptate nisi, quis error doloremque
-              ipsam expedita voluptatum illo sapiente facilis molestiae amet!
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-              adipisci molestias consequuntur, voluptas doloribus
-              doloremque dolor, atque excepturi dolore aperiam  
-              a ea dicta consectetur ipsam ratione, cumque nostrum quos itaque?
-            </p>
-
-              </div>
-            </div>
+    <div class="container">
+        <h1 id="heading">About</h1>
+           <div class="box">
+               <div id="logo">
+                <img src="./Images/Amzad NIRAJ SHALINI.png" alt="image">	
+     	   </div>
+    	          <div id="ourlogo">
+                       <img src="./Images/logo.png" alt="image">
+     	         </div>
+                   <div class="box2">
+						<p Id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit            
+						voluptate nisi, quis error doloremque
+						ipsam expedita voluptatum illo sapiente facilis molestiae amet!
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+						adipisci molestias consequuntur, voluptas doloribus
+						doloremque dolor, atque excepturi dolore aperiam  
+						a ea dicta consectetur ipsam ratione, cumque nostrum quos itaque?
+						</p>
+        	       </div>
+           </div>
             
-     </div>
+      </div>
      
                                               
 </body>
