@@ -32,3 +32,30 @@
     </div>
 </body>
 </html>
+
+<?php 
+    $connect = mysqli_connect("localhost", "root", "");
+    $check = $connect->select_db("questionpaper");
+
+    if(empty($check))
+    {
+        $query = "create database questionpaper";
+        $connect->query($query);
+    }
+    
+    $query = "select * from examdept";
+    $check = $connect->query($query);
+    if(!$check)
+    {
+        $query = "create table examdept (
+            ccode int,
+            cname varchar(50),
+            hname varchar(50),
+            email varchar(50),
+            mobile varchar(10),
+            username varchar(20),
+            password varchar(20)
+        )";
+    }
+    $connect->close();
+?>
