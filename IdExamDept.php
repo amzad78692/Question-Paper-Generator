@@ -21,7 +21,7 @@
             $username = $ccode."@".rand(100, 999);
             $password = uniqid();
 
-            $connect = mysqli_connect('localhost', 'amzad786', 'Amzad@123');
+            $connect = mysqli_connect('localhost', 'root', '');
             mysqli_select_db($connect, 'questionpaper');
 
             $query = "insert into examdept (ccode, cname, hname, email, mobile, username, password) values('".$ccode."',
