@@ -24,7 +24,7 @@
             <a href="AdminLogin.php" id="Alogin">Admin Login</a>
             <a href="#" id="Edlogin">Examination Department Login</a>
             <a href="#" id="Flogin">Faculty Login</a>
-            <a href="#" id="About">About</a>
+            <a href="About.php" id="About">About</a>
         </div>
     </div>
     <div class="Content">
