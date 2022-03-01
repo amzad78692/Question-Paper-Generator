@@ -11,7 +11,7 @@ justify-content: center;
 align-items: center;
 height: 100vh;
 background-image: linear-gradient(-30deg,#29a7c4 0%,#eed2d2 50%,
- #4c88c5 0%,white 100%);
+ #4c88c5 50%,white 0%);
 filter:hue-rotate(110deg);
 }
 
