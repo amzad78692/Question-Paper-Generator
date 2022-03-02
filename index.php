@@ -55,7 +55,7 @@
         $query = "create table examdept (
             ccode int,
             cname varchar(50),
-            hname varchar(50),
+-----------------------            hname varchar(50),
             email varchar(50),
             mobile varchar(10),
             username varchar(20),
