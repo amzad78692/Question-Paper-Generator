@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <img src="C:\xampp\htdocs\Question-Paper-Generator\passimg.jpg" alt="Background Image">
+        <img src="passimg.jpg" alt="Background Image">
         <div class="newpasswordform">
             <h2 id="heading">Update Password</h2>
             <form method="post" id="form">
