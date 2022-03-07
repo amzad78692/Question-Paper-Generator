@@ -23,7 +23,7 @@
         <div id="MainMenu">
             <a href="AdminLogin.php" id="Alogin">Admin Login</a>
             <a href="#" id="Edlogin">Examination Department Login</a>
-            <a href="Examadministrator.php" id="Flogin">Faculty Login</a>
+            <a href="FacultyLogin.php" id="Flogin">Faculty Login</a>
             <a href="About.php" id="About">About</a>
         </div>
     </div>
@@ -55,7 +55,7 @@
         $query = "create table examdept (
             ccode int,
             cname varchar(50),
------------------------            hname varchar(50),
+            hname varchar(50),
             email varchar(50),
             mobile varchar(10),
             username varchar(20),
