@@ -1,0 +1,11 @@
+*{
+                  margin: 0;
+                  padding: 0;
+}
+
+section{
+        background-color: aqua;    
+        height: 100vh;
+        width: 100%;  
+        background-image: radial-gradient(blue ,red,pink,yellow);
+}
