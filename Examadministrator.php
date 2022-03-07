@@ -11,7 +11,7 @@
     <section>
         <div class="container">
             <div class="box">
-                    <h1>Exam Department Login</h1>
+                    <h1>Faculty Login</h1>
                     <form>
                             <div class="inputbox">
                                 <input type="text" placeholder="Username" name="username">

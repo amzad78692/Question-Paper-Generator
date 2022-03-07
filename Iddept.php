@@ -9,10 +9,10 @@
 </head>
 <body>
     <section>
-    <div class="container">
-            <div class="box">
-                    <h1> Faculty Login</h1>
-                    <form>
+        <div class="container">
+              <div class="box">
+                 <h1>Exam Department Login</h1>
+                     <form>
                             <div class="inputbox">
                                 <input type="text" placeholder="Username" name="username">
                             </div>
@@ -20,13 +20,11 @@
                                 <input type="password" placeholder="Password" name="password">
                             </div>
                             <div class="inputbox">
-                                <input type="submit"  id="submit" value="Login" name="Submit">
+                                <input type="submit" value="Login" name="Submit">
                             </div>
-                            
-                        </form>
-                        
-            </div>
-        </div>
+                     </form>
+              </div>
+        </div>           
 </section>
                   
 </body>
