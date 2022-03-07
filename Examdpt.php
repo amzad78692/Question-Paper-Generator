@@ -18,7 +18,7 @@
             <a href="#">Print Ques</a>
             <a href="#">Change Password</a>
             <a href="#">View Id & Pass</a>
-            <a href="#">Log Out</a>
+            <a href="index.php">Log Out</a>
         </div>
 
     </div>
