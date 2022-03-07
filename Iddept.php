@@ -25,7 +25,7 @@
                 }
                 else
                 {
-                    echo "<p>Invalid Username or Password</p>";
+                    echo "<p id='paragraph'>Invalid Username or Password</p>";
                 }
             }
         ?>
