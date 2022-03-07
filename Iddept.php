@@ -20,11 +20,11 @@
                                 <input type="password" placeholder="Password" name="password">
                             </div>
                             <div class="inputbox">
-                                <input type="submit" value="Login" name="Submit">
+                                <input type="submit" id="submit" value="Login" name="Submit">
                             </div>
                      </form>
               </div>
-        </div>           
+        </div> 
 </section>
                   
 </body>

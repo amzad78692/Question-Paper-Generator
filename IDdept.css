@@ -11,14 +11,14 @@ justify-content: center;
 min-height: 100vh;
 background-image: linear-gradient(237deg,#013744 0%,#f0c0c0 50%,
  #32465b 0%,#eae4a9 100%);
-filter:hue-rotate(335deg);
+filter:hue-rotate(64deg);
 }
 
 .container{
 position: relative;
 border-radius: 10px;
-height: 450px;
-width: 400px;
+height: 500px;
+width: 450px;
 align-items: center;
 justify-content: center;
 box-shadow: 0 25px 45px rgba(0, 0, 0, 0.9);
@@ -33,7 +33,7 @@ margin-top: 30px;
 
  h1{
     position: relative;
-    font-size: 30px;
+    font-size: 35px;
     margin-bottom: 30px;
     margin-top: 30px;
     margin-left: 20px;
@@ -41,11 +41,24 @@ margin-top: 30px;
 }
 
 form{
-    margin-left: 50px;
+    margin-left: 60px;
     font-size: 30px;
 }
 
 .inputbox input{
     border-radius: 15px;
+    font-size: 20px;
+    padding: 5px;
+    background: rgb(235, 226, 228);
+    border:2px solid;
+    margin-top: 30px;
 
+}
+
+#submit{
+    margin-left: 110px;
+    font-size: 25px;
+    cursor: pointer;
+    max-width: 100%;
+    margin-top: 40px;
 }
