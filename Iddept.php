@@ -31,7 +31,7 @@
                 }
                 else
                 {
-                    echo "<p>Invalid Username or Password</p>";
+                    echo "<p id='paragraph'>Invalid Username or Password</p>";
                 }
             }
         ?>
@@ -49,7 +49,7 @@
                                 <input type="password" placeholder="Password" name="password">
                             </div>
                             <div class="inputbox">
-                                <input type="submit" value="Login" name="Submit">
+                                <input type="submit" id="submit" value="Login" name="Submit">
                             </div>
                             <?php
                                 if(isset($_POST['Submit']))
@@ -57,7 +57,7 @@
                             ?>
                      </form>
               </div>
-        </div>           
+        </div> 
 </section>
                   
 </body>
