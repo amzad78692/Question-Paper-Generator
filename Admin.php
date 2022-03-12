@@ -18,7 +18,7 @@
             <a href="IdExamDept.php">Id for exam dept</a>
             <a href="#">Generate ques paper</a>
             <a href="#">View ques paper</a>
-            <a href="#">Change own password</a>
+            <a href="createpassword.php">Change own password</a>
             <a href="#">View id password</a>
             <a href="index.php">Log out</a>
         </div>

@@ -35,23 +35,26 @@
 
 <?php 
     $connect = mysqli_connect("localhost", "root", "");
-    
+    $result;
     try {
         //code...
-        $connect->select_db("questionpaper");
-    } catch (\Throwable $th) {
-        //throw $th;
+        $result=$connect->select_db("questionpaper");
+         //echo $connect->error;
+    }
+    finally
+    {
         $query = "create database questionpaper";
-        $connect->query($query);
+        $result=$connect->query($query);
         $connect->select_db("questionpaper");
     }
     
     try {
         //code...
         $query = "select * from examdept";
-        $check = $connect->query($query);
-    } catch (\Throwable $th) {
-        //throw $th;
+        $result = $connect->query($query);
+    } 
+    finally
+    {
         $query = "create table examdept (
             ccode int,
             cname varchar(50),

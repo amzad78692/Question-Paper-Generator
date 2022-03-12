@@ -14,12 +14,18 @@
                 $password = $_POST['password'];
 
                 $connect = mysqli_connect("localhost", "root", "");
-                $connect->select_db("questionpaper");
+                //$connect->open();
+                mysqli_select_db($connect, "questionpaper");
 
-                $query = "select username, password from examdept where username = '".$username."' and password = '".$password."'";
-                $result=$connect->query($query);
-                if($result->num_rows==1)
+                $query = "select hname,username,password from examdept where username = '".$username."' and password = '".$password."'";
+                $result=mysqli_query($connect, $query);
+               $row = $result->fetch_assoc();
+                if($row['username'] == $username and $row['password'] == $password)
                 {
+                    
+                    session_start();
+                    $_SESSION["name"] = $row['hname'];
+                    $connect->close();
                     header("Location:Examdpt.php");
                     exit();
                 }
