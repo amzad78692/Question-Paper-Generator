@@ -19,8 +19,8 @@
                 if(isset($_POST['submit']))
                     register();
             ?>
-                <p id="label1">old password</p>
-                <input type="text" id="old-password-textbox" placeholder="old password" name="oldpass" required>
+                <p id="label1">Old password</p>
+                <input type="text" id="old-password-textbox" placeholder="Old password" name="oldpass" required>
                 
                 <p id="label2">New password</p>
                 <input type="text" id="new-password-textbox" placeholder="New password" name="newpass" required>

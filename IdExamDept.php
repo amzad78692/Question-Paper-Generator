@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Examination Department</title>
     <link rel="stylesheet" href="IdExamDept.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>import swal from 'sweetalert';</script>
 </head>
 
 <?php 
@@ -29,7 +31,15 @@
 
             mysqli_query($connect, $query);
             mysqli_close($connect);
-            echo "<p>Registration Successfull.</p>";
+            
+            ?>
+            <script>
+                swal("Registration successfull !", "", "success")
+                .then((value) => {
+                    window.location.replace("Examdpt.php");
+                });
+            </script>
+            <?php
         }
     }
 ?>

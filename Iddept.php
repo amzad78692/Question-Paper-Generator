@@ -19,8 +19,8 @@
 
                 $query = "select hname,username,password from examdept where username = '".$username."' and password = '".$password."'";
                 $result=mysqli_query($connect, $query);
-               $row = $result->fetch_assoc();
-                if($row['username'] == $username and $row['password'] == $password)
+                $row = $result->fetch_assoc();
+                if($result->num_rows == 1)
                 {
                     
                     session_start();
@@ -31,7 +31,7 @@
                 }
                 else
                 {
-                    echo "<p id='paragraph'>Invalid Username or Password</p>";
+                    echo "<p>Invalid Username or Password</p>";
                 }
             }
         ?>
@@ -49,7 +49,7 @@
                                 <input type="password" placeholder="Password" name="password">
                             </div>
                             <div class="inputbox">
-                                <input type="submit" id="submit" value="Login" name="Submit">
+                                <input type="submit" value="Login" name="Submit">
                             </div>
                             <?php
                                 if(isset($_POST['Submit']))
@@ -57,7 +57,7 @@
                             ?>
                      </form>
               </div>
-        </div> 
+        </div>           
 </section>
                   
 </body>
