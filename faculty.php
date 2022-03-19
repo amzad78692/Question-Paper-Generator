@@ -10,7 +10,7 @@
 <body>
          <div class="container">                             
              <h1 id="heading"> Question Paper Generator</h1>
-             <p id="paragraph">(Welcome to Faculty)</p>
+             <p id="paragraph">(Welcome <?php session_start();echo $_SESSION["name"]; ?>)</p>
              <div class="facultymain">
                  <a href="">Create Question</a>
                  <a href="">Edit Question</a>

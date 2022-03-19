@@ -19,13 +19,11 @@
             $email=$_POST ['email'];
             $mobile=$_POST['mobile'];
 
-            $username = $scode."@&".rand(500, 999);
+            $username = $scode."@&".rand(100, 999);
             $password = uniqid();
 
             $connect = mysqli_connect('localhost', 'root', '');
             mysqli_select_db($connect, 'questionpaper');
-            if($connect->connect_error)
-              echo('Connection faild :'.$connect->connect_error)
 
             $query = "insert into registerfaculty (cname,dname,fname,sname,scode, 
                       email, mobile, username, password)
@@ -34,6 +32,7 @@
 
             mysqli_query($connect, $query);
             mysqli_close($connect);
+            echo "Regidtration succesfull";
             
             
         }
@@ -44,7 +43,11 @@
         <img src="./Images/Roman Forum.jpg" alt="background">
         <div class="facultyform">
             <h1 id="heading">Faculty Register</h1>
-            <form action="post" id="form">
+            <form method="post" id="form">
+            <?php 
+                if(isset($_POST['submit']))
+                    Facultyregister();
+            ?>
                <p id="first">College Name</p>
                    <input type="text" placeholder="College Name" name="cname" required>
                     
@@ -60,17 +63,13 @@
                 <p id="fifth">Subject Code</p>   
                    <input type="text" placeholder="Subjecr Code" name="scode" required>
                    
-                <p id="sixth">Email</p>          
+                <p id="sisth">Email</p>          
                    <input type="text" placeholder="Email" name="email" required>
                 
                 <p id="seventh">Mobile</p>   
                    <input type="number" placeholder="Mobile" name="mobile" required>
                 <br><br>        
-                   <input type="submit" value="Register" id="Button" name="Submit">
-                   <?php 
-                if(isset($_POST['submit']))
-                    Facultyregister();
-            ?>
+                   <input type="submit" value="Register" id="Button" name="submit">
             </form>
         </div>
     </div>                 

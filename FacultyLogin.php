@@ -23,14 +23,25 @@
                             <div class="inputbox">
                                 <input type="submit"  id="submit" value="Login" name="Submit">
                             </div>
-                            <!-- <?php 
+                             <?php 
                                 if(isset($_POST['Submit']))
                                 {
                                     $username = $_POST['username'];
                                     $password = $_POST['password'];
 
-                                    if($username == "niraj001" and $password == "Niraj&72")
+                                    $connect = mysqli_connect("localhost", "root", "");
+                                    //$connect->open();
+                                    mysqli_select_db($connect, "questionpaper");
+                    
+                                    $query = "select fname,username,password from registerfaculty where username = '".$username."' and password = '".$password."'";
+                                    $result=mysqli_query($connect, $query);
+                                    $row = $result->fetch_assoc();
+                                    if($result->num_rows == 1)
                                     {
+                                        
+                                        session_start();
+                                        $_SESSION["name"] = $row['fname'];
+                                        $connect->close();
                                         header("Location:faculty.php");
                                         exit();
                                     }
@@ -38,9 +49,9 @@
                                     {
                                         echo "<p>Invalid Username or Password</p>";
                                     }
-                                }
+                                }    
 
-                            ?> -->
+                            ?> 
                             
                         </form>
                 </form>       
