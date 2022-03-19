@@ -12,7 +12,7 @@
         <h1 id="heading">Question Paper Generator</h1>
         <p id="paragraph">(Welcome <?php session_start();echo $_SESSION["name"]; ?>)</p>
         <div class="mainexam">
-            <a href="#">Id for Faculty</a>
+            <a href="Facultyregister.php">Id for Faculty</a>
             <a href="#">View Ques</a>
             <a href="#">Delete Ques</a>
             <a href="#">Print Ques</a>

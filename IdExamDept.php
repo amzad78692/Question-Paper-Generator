@@ -36,7 +36,7 @@
             <script>
                 swal("Registration successfull !", "", "success")
                 .then((value) => {
-                    window.location.replace("Examdpt.php");
+                    window.location.replace("Admin.php");
                 });
             </script>
             <?php

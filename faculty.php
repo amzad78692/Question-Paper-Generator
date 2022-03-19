@@ -16,7 +16,7 @@
                  <a href="">Edit Question</a>
                  <a href="">View Question</a>
                  <a href="">Delete Question</a>
-                 <a href="">Log Out</a>
+                 <a href="index.php">Log Out</a>
              </div>
         </div>
         <div class="box">

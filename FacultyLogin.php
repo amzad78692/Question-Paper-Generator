@@ -11,8 +11,9 @@
     <section>
         <div class="container">
             <div class="box">
+                <form method="post">
                     <h1>Faculty Login</h1>
-                    <form>
+                      <form>
                             <div class="inputbox">
                                 <input type="text" placeholder="Username" name="username">
                             </div>
@@ -22,9 +23,27 @@
                             <div class="inputbox">
                                 <input type="submit"  id="submit" value="Login" name="Submit">
                             </div>
+                            <!-- <?php 
+                                if(isset($_POST['Submit']))
+                                {
+                                    $username = $_POST['username'];
+                                    $password = $_POST['password'];
+
+                                    if($username == "niraj001" and $password == "Niraj&72")
+                                    {
+                                        header("Location:faculty.php");
+                                        exit();
+                                    }
+                                    else
+                                    {
+                                        echo "<p>Invalid Username or Password</p>";
+                                    }
+                                }
+
+                            ?> -->
                             
                         </form>
-                        
+                </form>       
             </div>
         </div>
     </section>

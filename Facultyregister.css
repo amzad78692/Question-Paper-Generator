@@ -1,0 +1,50 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Lemonada',cursive;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    justify-content: center;
+}
+
+.container img{
+    height: 100%;
+    width: 100%;
+}
+
+.facultyform{
+    height: 580px;
+    width: 580px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    box-shadow: 0 20px 30px rgba(0,0,0,1);
+    border-radius: 20px;
+    display: grid;
+    opacity: 90%;
+
+}
+
+#form p{
+    font-size: 21px;
+    border-radius: 10px;
+}
+
+#form input{
+    border-radius: 15px;
+    padding: 4px;
+    font-size: 15px;
+}
+
+#Button{
+    margin-left: 80px;
+}
