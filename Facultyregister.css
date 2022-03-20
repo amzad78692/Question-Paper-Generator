@@ -27,7 +27,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
-    box-shadow: 0 20px 30px rgba(0,0,0,1);
+    box-shadow: 0 25px 35px rgba(0,0,0,0.9);
     border-radius: 20px;
     display: grid;
     opacity: 90%;
@@ -47,4 +47,8 @@
 
 #Button{
     margin-left: 80px;
+}
+
+p{
+color: aliceblue;
 }

@@ -40,7 +40,7 @@
 ?> 
 <body>
     <div class="container">
-        <img src="./Images/Roman Forum.jpg" alt="background">
+        <img src="./Images/Roman Forum.png" alt="background">
         <div class="facultyform">
             <h1 id="heading">Faculty Register</h1>
             <form method="post" id="form">
