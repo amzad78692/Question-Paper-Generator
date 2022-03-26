@@ -6,9 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="Facultyregister.css">
         <title>Register Faculty</title>
-</head>
 
- <?php
+        <?php
     function Facultyregister (){
         if(isset($_POST['submit'])){
             $cname=$_POST ['cname'];
@@ -19,7 +18,7 @@
             $email=$_POST ['email'];
             $mobile=$_POST['mobile'];
 
-            $username = $scode."@&".rand(100, 999);
+            $username = str_replace("-", "", $scode)."@&".rand(100, 999);
             $password = uniqid();
 
             $connect = mysqli_connect('localhost', 'root', '');
@@ -38,6 +37,9 @@
         }
     } 
 ?> 
+</head>
+
+ 
 <body>
     <div class="container">
         <img src="./Images/Roman Forum.png" alt="background">

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="MainPage.css">
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <title>Question Paper Generator</title>
+    <?php require("Database.php"); ?>
 </head>
 <body>
     <div class="Heading">
@@ -33,38 +34,3 @@
 </body>
 </html>
 
-<?php 
-    $connect = mysqli_connect("localhost", "root", "");
-    $result;
-    try {
-        //code...
-        $result=$connect->select_db("questionpaper");
-         //echo $connect->error;
-    }
-    finally
-    {
-        $query = "create database questionpaper";
-        $result=$connect->query($query);
-        $connect->select_db("questionpaper");
-    }
-    
-    try {
-        //code...
-        $query = "select * from examdept";
-        $result = $connect->query($query);
-    } 
-    finally
-    {
-        $query = "create table examdept (
-            ccode int,
-            cname varchar(50),
-            hname varchar(50),
-            email varchar(50),
-            mobile varchar(10),
-            username varchar(20),
-            password varchar(20)
-        )";
-        $connect->query($query);
-    }
-    $connect->close();
-?>

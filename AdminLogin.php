@@ -38,8 +38,15 @@
                                     $username = $_POST['username'];
                                     $password = $_POST['password'];
 
-                                    if($username == "amzad786" and $password == "Amzad@123")
+                                    $connect = mysqli_connect("localhost", "root", "");
+                                    $connect->select_db("questionpaper");
+                                    $query = "select username, password from admin where username = '".$username."' and password = '".$password."'";
+                                    $result = $connect->query($query);
+
+
+                                    if($result->num_rows >0)
                                     {
+                                        
                                         header("Location:Admin.php");
                                         exit();
                                     }
@@ -47,6 +54,7 @@
                                     {
                                         echo "<p>Invalid Username or Password</p>";
                                     }
+                                    $connect->close();
                                 }
 
                             ?>
