@@ -19,7 +19,7 @@
             <a href="#">Generate ques paper</a>
             <a href="#">View ques paper</a>
             <a href="createpassword.php">Change own password</a>
-            <a href="#">View id password</a>
+            <a href="AdminViewpass.php">View id password</a>
             <a href="index.php">Log out</a>
         </div>
 
