@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="Facultyregister.css">
         <title>Register Faculty</title>
 
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>import swal from 'sweetalert';</script>
+
         <?php
     function Facultyregister (){
         if(isset($_POST['submit'])){
@@ -31,7 +34,14 @@
 
             mysqli_query($connect, $query);
             mysqli_close($connect);
-            echo "Regidtration succesfull";
+            ?>
+            <script>
+                swal("Registration Successful !", "", "success")
+                .then((value) => {
+                    window.location.replace("Examdpt.php");
+                });
+            </script>
+            <?php
             
             
         }
