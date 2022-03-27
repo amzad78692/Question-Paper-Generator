@@ -16,8 +16,8 @@
             <a href="#">View Ques</a>
             <a href="#">Delete Ques</a>
             <a href="#">Print Ques</a>
-            <a href="#">Change Password</a>
-            <a href="#">View Id & Pass</a>
+            <a href="Examdptcngpass.php">Change Password</a>
+            <a href="Examdptviewpass.php">View Id & Pass</a>
             <a href="index.php">Log Out</a>
         </div>
 
