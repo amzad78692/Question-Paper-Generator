@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        <img src="Images/church.jpg" alt="Background Image">
         <div class="viewpass">
             <h1 id="heading">View Id Password</h1>
             <form method="post" id="form">
