@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+    <img src="Images/passimg.jpg" alt="Background Image">
         <div class="changepass">
             <h1 id="heading">Change Password</h1>
                <form method="post" id="form">
