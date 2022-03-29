@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-                  <meta charset="UTF-8">
-                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <link rel="stylesheet" href="new2.css">
-                  <title>Register Faculty</title>
-</head>
-<body>
-      <div class="container">
-             <div id="new1">
-                 <h2>this is new page</h2>
-             </div>
-     </div>    
-                  
-                  
-</body>
-</html>
+<?php
+require_once "vendor/autoload.php";
+$phpWord = new \PhpOffice\PhpWord\PhpWord();
+$section = $phpWord->addSection();
+$section->addText("Swami Vivekanand Subharti University",array(
+                  'size'=>24, 'bold'=>true,'align'=>'center'
+));
+
+$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+$objWriter->save('Question.docx');
+
+?>
