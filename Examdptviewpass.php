@@ -16,8 +16,8 @@
             <form method="post" id="form">
                 <p class="first"> Enter Subject Code</p>
                 <input type="text" placeholder="Subject Code" name="code" required>
-                <div id="button">
-                <input type="submit" value="View"  name="submit">
+                <div class="button">
+                <input type="submit" value="View" id="rebutton" name="submit">
                 <?php
                     if(isset($_POST['submit']))
                         getIdPass();
@@ -43,11 +43,11 @@
         {
             $data = $result->fetch_assoc();
             echo "<br>";
-            echo "<p class='first'> Faculty Name</p> = ".$data['fname'];
+            echo "<p class='second'> Faculty Name</p> = ".$data['fname'];
             echo "<br>";
-            echo "<p class='first'> Username</p> = ".$data['username'];
+            echo "<p class='second'> Username</p> = ".$data['username'];
             echo "<br>";
-            echo "<p class='first'> Password</p> = ".$data['password'];
+            echo "<p class='second'> Password</p> = ".$data['password'];
         }
         else
         {

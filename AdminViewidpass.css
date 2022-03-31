@@ -63,3 +63,9 @@
    color: aliceblue;
    font-size: 20px;
 }
+
+.third{
+   color: aliceblue;
+   display: contents;
+   font-size: 25px;
+}

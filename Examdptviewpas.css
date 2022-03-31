@@ -29,7 +29,7 @@
 
 #heading{
    margin-left: 60px;
-   margin-top: 20px;
+   margin-top: 40px;
 }
 
 #form input{
@@ -47,11 +47,15 @@
    margin-top: 10px;
 }
 
-#button{
+.button{
    margin-left: 100px;
 }
 
-.first p{
-   font-size: 20px;
+.second {
    color: aliceblue;
+   display: contents;
+}
+
+.first p{
+   margin-top: 30px;
 }
