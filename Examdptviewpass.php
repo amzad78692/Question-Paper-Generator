@@ -43,11 +43,11 @@
         {
             $data = $result->fetch_assoc();
             echo "<br>";
-            echo "<p class='second'> Faculty Name</p> = ".$data['fname'];
+            echo "<p class='second'> Faculty Name = ".$data['fname']."</p>";
             echo "<br>";
-            echo "<p class='second'> Username</p> = ".$data['username'];
+            echo "<p class='second'> Username = ".$data['username']."</p>";
             echo "<br>";
-            echo "<p class='second'> Password</p> = ".$data['password'];
+            echo "<p class='second'> Password = ".$data['password']."</p>";
         }
         else
         {

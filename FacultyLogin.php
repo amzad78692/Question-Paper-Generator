@@ -41,6 +41,8 @@
                                         
                                         session_start();
                                         $_SESSION["name"] = $row['fname'];
+                                        $_SESSION["sname"] = $row['sname'];
+                                        $_SESSION["scode"] = $row['scode'];
                                         $connect->close();
                                         header("Location:faculty.php");
                                         exit();

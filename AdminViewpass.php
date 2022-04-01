@@ -21,8 +21,7 @@
                 <input type="submit" value="View"  name="submit">
                  <?php
                     if(isset($_POST['submit']))
-                    header("Location:showpass.php");
-                    //   adminviewpass();
+                       adminviewpass();
                  ?>
                 </div>
             </form>        
@@ -33,7 +32,7 @@
 </body>
 </html>
 
-<!-- <?php
+ <?php
    function adminviewpass()
    {
     $code = $_POST['ccode'];
@@ -47,11 +46,11 @@
     {
         $data = $result->fetch_assoc();
         echo "<br>";
-        echo "<p class='third'>College Code</p> =".$data['ccode'];
+        echo "<p class='third'>College Code =".$data['ccode']."</p>";
         echo "<br>";
-        echo "<p class='third'> Username</p> =".$data['username'];
+        echo "<p class='third'> Username =".$data['username']."</p>";
         echo "<br>";
-        echo "<p class='third'> Password</p> = ".$data['password'];
+        echo "<p class='third'> Password = ".$data['password']."</p>";
     } 
     else
     {
@@ -64,4 +63,4 @@
     $connect->close();
 
    }
-?> -->
+?> 
