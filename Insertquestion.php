@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>import swal from 'sweetalert';</script>
+    <link rel="stylesheet" href="Insertquestion.css">
     <title>Insert Question</title>
 </head>
 <body>
