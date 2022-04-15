@@ -74,5 +74,23 @@
         )";
         $connect->query($query);
     }
+    try {
+        //code...
+        $query = "select * from question";
+        $result = $connect->query($query);
+    } 
+    finally
+    {
+        $query = "create table question (
+            question varchar(500),
+            marks int,
+            level varchar(10),
+            sname varchar(50),
+            scode varchar(10), 
+            sem varchar(5),
+            year varchar(5)
+        )";
+        $connect->query($query);
+    }
     $connect->close();
 ?>

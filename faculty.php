@@ -10,13 +10,21 @@
 <body>
          <div class="container">                             
              <h1 id="heading"> Question Paper Generator</h1>
-             <p id="paragraph">(Welcome <?php session_start();echo $_SESSION["name"]; ?>)</p>
+             <p id="paragraph">(Welcome 
+                 <?php 
+                    session_start();
+                    echo $_SESSION["name"]; 
+                    $sname = $_SESSION["sname"]; 
+                    $scode = $_SESSION["scode"]; 
+                ?>)</p>
              <div class="facultymain">
-                 <a href="">Create Question</a>
-                 <a href="">Edit Question</a>
-                 <a href="">View Question</a>
-                 <a href="">Delete Question</a>
-                 <a href="index.php">Log Out</a>
+                 <form method="post">
+                    <a href="Insertquestion.php" name="createbtn" type="submit">Create Question</a>
+                    <a href="">Edit Question</a>
+                    <a href="">View Question</a>
+                    <a href="">Delete Question</a>
+                    <a href="index.php">Log Out</a>
+                 </form>
              </div>
         </div>
         <div class="box">
@@ -25,3 +33,16 @@
                   
 </body>
 </html>
+
+<?php
+    function senddata()
+    {
+        session_start();
+        $_SESSION["sname"] = $sname;
+        $_SESSION["scode"] = $scode;
+        header("Location:faculty.php");
+        exit();
+    }
+    if(isset($_POST['createbtn']))
+        senddata();
+?>
