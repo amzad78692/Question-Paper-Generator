@@ -16,10 +16,12 @@
                     echo $_SESSION["name"]; 
                     $sname = $_SESSION["sname"]; 
                     $scode = $_SESSION["scode"]; 
+                    
                 ?>)</p>
              <div class="facultymain">
                  <form method="post">
-                    <a href="Insertquestion.php" name="createbtn" type="submit">Create Question</a>
+                     <button name="createbtn">Create Question</button>
+                    <!-- <a href="Insertquestion.php" name="createbtn" type="submit">Create Question</a> -->
                     <a href="">Edit Question</a>
                     <a href="">View Question</a>
                     <a href="">Delete Question</a>
@@ -38,11 +40,12 @@
     function senddata()
     {
         session_start();
-        $_SESSION["sname"] = $sname;
-        $_SESSION["scode"] = $scode;
-        header("Location:faculty.php");
+        $_SESSION["sname"] = $GLOBALS['sname'];
+        $_SESSION["scode"] = $GLOBALS['scode'];
+        header("Location:Insertquestion.php");
         exit();
     }
     if(isset($_POST['createbtn']))
         senddata();
+
 ?>

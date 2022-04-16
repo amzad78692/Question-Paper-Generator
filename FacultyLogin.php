@@ -33,7 +33,7 @@
                                     //$connect->open();
                                     mysqli_select_db($connect, "questionpaper");
                     
-                                    $query = "select fname,username,password from registerfaculty where username = '".$username."' and password = '".$password."'";
+                                    $query = "select fname, sname, scode from registerfaculty where username = '".$username."' and password = '".$password."'";
                                     $result=mysqli_query($connect, $query);
                                     $row = $result->fetch_assoc();
                                     if($result->num_rows == 1)

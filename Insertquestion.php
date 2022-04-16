@@ -14,11 +14,9 @@
         <h3>Subject Name : <?php session_start(); echo $_SESSION['sname']; ?></h3>
         <h3>Subject Code : <?php echo $_SESSION['scode']; ?></h3>
     </div>
-
-    <form method="POST">
-        <div class="question">
-            
-            <p>Marks:</p>
+    <div class="question">
+        <form method="POST">
+        <p>Marks:</p>
             <input type="number" name="marks">
             <p>Difficulty Level : </p>
             <select name="level" id="level">
@@ -30,21 +28,24 @@
             <p>Semester : </p>
             <select name="sem" id="sem">
                 <option value="Select">Select Sem</option>
-                <option value="Low">I</option>
-                <option value="Medium">II</option>
-                <option value="High">III</option>
-                <option value="Select">IV</option>
-                <option value="Low">V</option>
-                <option value="Medium">VI</option>
-                <option value="High">VII</option>
-                <option value="High">VIII</option>
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+                <option value="V">V</option>
+                <option value="VI">VI</option>
+                <option value="VII">VII</option>
+                <option value="VIII">VIII</option>
             </select>
             <p>Type Question Here</p>
             <textarea name="question" id="question" cols="50" rows="3"></textarea>
             <br>
             <input type="submit" name="submit" value="Insert">
-        </div>
-    </form>
+
+        </form>
+   </div>
+
+    
 </body>
 </html>
 
@@ -57,11 +58,11 @@
         $sname = $_SESSION['sname'];
         $scode = $_SESSION['scode'];
         $sem   = $_POST['sem'];
-        $year = new date();
-        $year = $year->format('Y');
+        $year = date('Y');
+        // $year = $year->format('Y');
 
         $connect = mysqli_connect("localhost", "root", "");
-
+        mysqli_select_db($connect, "questionpaper");
         $query = "insert into question values('".$question."', '".$marks."', '".$level."', '".$sname."', '".$scode."', '".$sem."', '".$year."')";
 
         $connect->query($query);
