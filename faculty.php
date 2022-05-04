@@ -14,6 +14,7 @@
                  <?php 
                     session_start();
                     echo $_SESSION["name"]; 
+                    $fname = $_SESSION["name"];
                     $sname = $_SESSION["sname"]; 
                     $scode = $_SESSION["scode"]; 
                     
@@ -23,7 +24,7 @@
                      <button name="createbtn">Create Question</button>
                     <!-- <a href="Insertquestion.php" name="createbtn" type="submit">Create Question</a> -->
                     <a href="">Edit Question</a>
-                    <a href="">View Question</a>
+                    <button name="viewbtn">View Question</button>
                     <a href="">Delete Question</a>
                     <a href="index.php">Log Out</a>
                  </form>
@@ -37,7 +38,7 @@
 </html>
 
 <?php
-    function senddata()
+    if(isset($_POST['createbtn']))
     {
         session_start();
         $_SESSION["sname"] = $GLOBALS['sname'];
@@ -45,7 +46,18 @@
         header("Location:Insertquestion.php");
         exit();
     }
-    if(isset($_POST['createbtn']))
-        senddata();
+    if(isset($_POST['viewbtn']))
+    {
+        $connect = mysqli_connect("localhost", "root", "");
+        $connect->select_db("questionpaper");
+
+        $query = "SELECT sname FROM registerfaculty where fname='".$GLOBALS['fname']."'";
+        $result = $connect->query($query);
+
+        session_start();
+        $_SESSION["fname"] = $GLOBALS['fname'];
+        header("Location:ViewQuestion.php");
+        exit();
+    }
 
 ?>

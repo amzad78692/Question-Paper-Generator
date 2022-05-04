@@ -32,11 +32,11 @@
     $pdf->Cell(0, 7, $course, 0, 1, "C");
     $pdf->Cell(0, 7, $year.' YEAR '.$sem.' SEM EXAMINATION', 0, 1, "C");
     $pdf->Cell(0, 7, $sname, 0, 1, "C");
-    $pdf->Cell(0, 7, $scode, 0, 1, "C");
+    $pdf->Cell(0, 7, 'Subject Code - '.$scode, 0, 1, "C");
     $pdf->Cell(0, 7, '[Time : 3:00 Hours]', 0, 0, "L");
     $pdf->Cell(0, 7, '[Max. Marks : 70]', 0, 1, "R");
     
-    $pdf->Cell(0, 7, "Note/Instruction:", 0, 1, "L");
+    $pdf->Cell(0, 7, "Note/Instructions:", 0, 1, "L");
     $pdf->Cell(0, 7, "i)   Attempt all questions.", 0, 1, "L");
     $pdf->Cell(0, 7, "ii)  Marks are indicated against each section.", 0, 1, "L");
     $pdf->Cell(0, 7, "iii) Assume missing data if any.", 0, 1, "L");
