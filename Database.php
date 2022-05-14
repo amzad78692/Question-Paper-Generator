@@ -1,18 +1,14 @@
 <?php 
     $connect = mysqli_connect("localhost", "root", "");
-    $result;
-    try {
-        //code...
-        $result=$connect->select_db("questionpaper");
-         //echo $connect->error;
-    }
-    finally
-    {
-        $query = "create database questionpaper";
-        $result=$connect->query($query);
-        $connect->select_db("questionpaper");
-    }
+
+    // Creating Database.
+    $query = "create database questionpaper";
+    $connect->query($query);
+
+    // Selecting Database.
+    $connect->select_db("questionpaper");
     
+    // Creating Admin Credentials.
     try {
         //code...
         $query = "select * from admin";
@@ -35,62 +31,44 @@
         
     }
 
-    try {
-        //code...
-        $query = "select * from examdept";
-        $result = $connect->query($query);
-    } 
-    finally
-    {
-        $query = "create table examdept (
-            ccode int,
-            cname varchar(50),
-            hname varchar(50),
-            email varchar(50),
-            mobile varchar(10),
-            username varchar(20),
-            password varchar(20)
-        )";
-        $connect->query($query);
-    }
+    // Creating examdept table
+    $query = "create table examdept (
+        ccode int,
+        cname varchar(50),
+        hname varchar(50),
+        email varchar(50),
+        mobile varchar(10),
+        username varchar(20),
+        password varchar(20)
+    )";
+    $connect->query($query);
 
-    try {
-        //code...
-        $query = "select * from registerfaculty";
-        $result = $connect->query($query);
-    } 
-    finally
-    {
-        $query = "create table registerfaculty (
-            cname varchar(50),
-            dname varchar(50),
-            fname varchar(50),
-            sname varchar(50),
-            scode varchar(10), 
-            email varchar(30),
-            mobile varchar(10),
-            username varchar(20),
-            password varchar(20)
-        )";
-        $connect->query($query);
-    }
-    try {
-        //code...
-        $query = "select * from question";
-        $result = $connect->query($query);
-    } 
-    finally
-    {
-        $query = "create table question (
-            question varchar(500),
-            marks int,
-            level varchar(10),
-            sname varchar(50),
-            scode varchar(10), 
-            sem varchar(5),
-            year varchar(5)
-        )";
-        $connect->query($query);
-    }
+    // Creating registerfaculty table
+    $query = "create table registerfaculty (
+        cname varchar(50),
+        dname varchar(50),
+        fname varchar(50),
+        sname varchar(50),
+        scode varchar(10), 
+        email varchar(30),
+        mobile varchar(10),
+        username varchar(20),
+        password varchar(20)
+    )";
+    $connect->query($query);
+    
+    // Creating question table
+    $query = "create table question (
+        question varchar(500),
+        marks int,
+        level varchar(10),
+        sname varchar(50),
+        scode varchar(10), 
+        sem varchar(5),
+        year varchar(5)
+    )";
+    $connect->query($query);
+    
+    // Closing the connection
     $connect->close();
 ?>

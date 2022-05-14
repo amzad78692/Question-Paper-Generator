@@ -21,9 +21,9 @@
             <p>Difficulty Level : </p>
             <select name="level" id="level">
                 <option value="Select">Select Level</option>
-                <option value="Low">Low</option>
+                <option value="Low">Easy</option>
                 <option value="Medium">Medium</option>
-                <option value="High">High</option>
+                <option value="High">Hard</option>
             </select>
             <p>Semester : </p>
             <select name="sem" id="sem">
