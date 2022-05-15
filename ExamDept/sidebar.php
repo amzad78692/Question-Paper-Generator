@@ -5,17 +5,16 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="" class="nav-link">QUERY WRAPPING CREATOR</a>
+        <a href="ExamDept.php" class="nav-link">QUERY WRAPPING CREATOR</a>
       </li>
     </ul>
 </nav>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="Admin.php" class="brand-link">
-      <img src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-admin-responsive-design-xnimrodx-lineal-gradient-xnimrodx.png" alt="Admin Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Welcome Admin</span>
+    <a href="ExamDept.php" class="brand-link">
+      <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-department-university-flaticons-flat-flat-icons-3.png" alt="Admin Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Welcome Department</span>
     </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
@@ -24,7 +23,8 @@
           <img src="../Images/logo.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="Admin.php" class="d-block">SVSU, MEERUT</a>
+          
+          <a href="ExamDept.php" class="d-block"><?php echo $_SESSION['hname'];?></a>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
-            <a href="Admin.php" class="nav-link active">
+            <a href="ExamDept.php" class="nav-link active">
               <i class="nav-icon"><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/32/000000/external-dashboard-computer-programming-flaticons-lineal-color-flat-icons.png"/></i>
               <p>
                 Dashboard
@@ -42,34 +42,42 @@
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="IdExamDept.php" class="nav-link active">
-              <i class="nav-icon"><img src="https://img.icons8.com/external-inipagistudio-lineal-color-inipagistudio/32/000000/external-registration-medical-test-inipagistudio-lineal-color-inipagistudio.png"/></i>
+            <a href="RegFaculty.php" class="nav-link active">
+              <i class="nav-icon"><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/32/000000/external-faculty-university-flaticons-lineal-color-flat-icons.png"/></i>
               <p>
-                Id For Exam Department
+                Register Faculty
               </p>
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="ViewAllDept.php" class="nav-link active">
-              <i class="nav-icon"><img src="https://img.icons8.com/external-flaticons-flat-flat-icons/32/000000/external-department-university-flaticons-flat-flat-icons-3.png"/></i>
+            <a href="ViewAllFaculty.php" class="nav-link active">
+              <i class="nav-icon"><img src="https://img.icons8.com/external-flaticons-flat-flat-icons/32/000000/external-faculty-university-flaticons-flat-flat-icons-2.png"/></i>
               <p>
-                View All Department
+                View All Faculty
               </p>
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="GenerateQues.php" class="nav-link active">
+            <a href="AddCourse.php" class="nav-link active">
+              <i class="nav-icon"><img src="https://img.icons8.com/external-dualtone-zulfa-mahendra/32/000000/external-course-online-study-dualtone-zulfa-mahendra.png"/></i>
+              <p>
+                Add Course
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="ViewAllCourse.php" class="nav-link active">
+              <i class="nav-icon"><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/32/000000/external-course-resume-flaticons-lineal-color-flat-icons.png"/></i>
+              <p>
+                View All Course
+              </p>
+            </a>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="ViewQuesPaper.php" class="nav-link active">
               <i class="nav-icon"><img src="https://img.icons8.com/nolan/32/questions.png"/></i>
               <p>
-                Generate Paper
-              </p>
-            </a>
-          </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon"><img src="https://img.icons8.com/fluency/32/000000/view-headline.png"/></i>
-              <p>
-                View All Question Paper
+                View Question Paper
               </p>
             </a>
           </li>

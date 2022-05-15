@@ -63,5 +63,18 @@
         }
         echo $str;
     }
-    
+    if(isset($_GET['module'])){
+        $num = $_GET['module'];
+
+        $str = "<label>No. of Questions in every Module</label><br>";
+        for ($i=1; $i <= $num; $i++) { 
+            $str .= "<label>Module ".$i."</label>";
+            $str .= '<input class="form-control" type="number" placeholder="No. of Questions" name='.$i.' required>';
+            $str .= "<label>Optional questions in module ".$i."</label>";
+            $str .= '<input class="form-control" type="number" placeholder="No. of optional questions" name=opt'.$i.' required>';
+            $str .= "<label>Marks in module ".$i."</label>";
+            $str .= '<input class="form-control" type="number" placeholder="Marks of module '.$i.'" name=m'.$i.' required>';
+        }
+        echo $str;
+    }
 ?>

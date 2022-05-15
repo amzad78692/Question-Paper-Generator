@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="MainPage.css">
+    <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <title>Question Paper Generator</title>
     <?php require("Database.php"); ?>
@@ -22,9 +22,9 @@
 
         </div>
         <div id="MainMenu">
-            <a href="AdminLogin.php" id="Alogin">Admin Login</a>
-            <a href="iddept.php" id="Edlogin">Examination Department Login</a>
-            <a href="FacultyLogin.php" id="Flogin">Faculty Login</a>
+            <a href="Admin/AdminLogin.php" id="Alogin">Admin Login</a>
+            <a href="ExamDept/DeptLogin.php" id="Edlogin">Examination Department Login</a>
+            <a href="Faculty/FacultyLogin.php" id="Flogin">Faculty Login</a>
             <a href="About.php" id="About">About</a>
         </div>
     </div>

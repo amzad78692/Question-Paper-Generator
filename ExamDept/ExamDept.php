@@ -60,12 +60,12 @@
     <!-- <script src="../dist/js/demo.js"></script> -->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
-    <title>Faculty Dashboard</title>
+    <title>Department Dashboard</title>
 </head>
 
 <?php
     session_start();
-    $_SESSION['fname'] = $_SESSION['fname'];
+    $_SESSION['hname'] = $_SESSION['hname'];
 ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -82,7 +82,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="faculty.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="ExamDept.php">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
@@ -110,10 +110,10 @@
                         $connect->close();
                     ?>
                 </h3>
-                <p>Subjects</p>
+                <p>Faculties</p>
               </div>
               <div class="icon">
-                <i class="ion"><img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-department-university-flaticons-flat-flat-icons-3.png"/></i>
+                <i class="ion"><img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-faculty-university-flaticons-flat-flat-icons-2.png"/></i>
               </div>
               <a href="ViewAllSub.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -132,14 +132,37 @@
                         echo $result->num_rows;
                     ?>
                 </h3>
-                <p>Questions</p>
+                <p>Courses</p>
               </div>
               <div class="icon">
-                <i class="ion"><img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-faculty-university-flaticons-flat-flat-icons-2.png"/></i>
+                <i class="ion"><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-course-resume-flaticons-lineal-color-flat-icons.png"/></i>
               </div>
               <a href="ViewAllQues.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>
+                    <?php
+                        $connect = mysqli_connect("localhost", "root", "");
+                        $connect->select_db("questionpaper");
+                        $query = "select sname from registerfaculty where fname = '".$_SESSION['fname']."'";
+                        $result = $connect->query($query) or die($connect->error);
+                        echo $result->num_rows;
+                        $connect->close();
+                    ?>
+                </h3>
+                <p>Question Papers</p>
+              </div>
+              <div class="icon">
+                <i class="ion"><img src="https://img.icons8.com/nolan/64/questions.png"/></i>
+              </div>
+              <a href="ViewAllSub.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

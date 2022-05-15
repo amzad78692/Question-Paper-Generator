@@ -143,6 +143,45 @@
                     <option selected>Select</option>
                     </select>
                   </div>
+                  <div class="form-group">
+                    <label for="difficulty">Select Difficulty</label>
+                    <select class="form-select" aria-label="Default select example" id="difficulty" name="difficulty">
+                    <option selected>Select</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="module">No. of Modules</label>
+                    <select class="form-select" aria-label="Default select example" id="module" name="module" onchange="GetModule(this.value)">
+                    <option selected>Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    </select>
+                  </div>
+                  <div class="form-group" id="qpm">
+                  </div>
+                  <div class="form-group">
+                    <label for="time">Select Total Time (Hours)</label>
+                    <select class="form-select" aria-label="Default select example" id="time" name="time">
+                    <option selected>Select</option>
+                    <option value="1/2">1/2</option>
+                    <option value="1">1</option>
+                    <option value="3/2">3/2</option>
+                    <option value="2">2</option>
+                    <option value="5/2">5/2</option>
+                    <option value="3">3</option>
+                    <option value="7/2">7/2</option>
+                    <option value="4">4</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="card-footer">
                     <input class="btn btn-primary" type="submit" value="Generate" name="submit">
@@ -199,6 +238,17 @@
         req.onreadystatechange = function(){
             if(req.readyState == 4 && req.status == 200){
                 document.getElementById('subject').innerHTML = req.responseText;
+            }
+        }
+    }
+    function GetModule(data) {
+        const req = new XMLHttpRequest();
+        req.open('GET', 'http://localhost/Question-Paper-Generator/Admin/LoadData.php?module='+data, 'true');
+        req.send();
+
+        req.onreadystatechange = function(){
+            if(req.readyState == 4 && req.status == 200){
+                document.getElementById('qpm').innerHTML = req.responseText;
             }
         }
     }
