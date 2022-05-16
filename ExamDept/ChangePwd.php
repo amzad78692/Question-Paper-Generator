@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Faculty</title>
+    <title>Update Password</title>
     <!-- <link rel="stylesheet" href="IdExamDept.css"> -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>import swal from 'sweetalert';</script>
@@ -68,36 +68,6 @@
     <script src="../dist/js/adminlte.js"></script>
     <script src="../dist/js/pages/dashboard.js"></script>
 </head>
-
-<?php 
-    $connect = mysqli_connect('localhost', 'root', '');
-    mysqli_select_db($connect, 'questionpaper');
-    $query = "select cname from examdept where hname='".$_SESSION['hname']."'";
-    $result = $connect->query($query) or die($connect->error);
-    $data = $result->fetch_assoc();
-    $cname = $data['cname'];
-    if(isset($_POST['submit'])){
-        $dname = $_POST['dept'];
-        $fname = $_POST['fname'];
-        $sname = $_POST ['sname'];
-        $scode = $_POST ['scode'];
-        $sem = $_POST['sem'];
-        $email = $_POST ['email'];
-        $mobile = $_POST ['mobile'];
-          // Generating the username and password.
-          $username = $scode."@".rand(100, 999);
-          $password = uniqid();
-
-          
-
-          $query = "insert into registerfaculty (cname, dname, fname,sname, scode, sem, email, mobile, username, password) values('".$cname."',
-          '".$dname."', '".$fname."', '".$sname."', '".$scode."', '".$sem."', '".$email."', '".$mobile."', '".$username."', '".$password."')";
-
-          $connect->query($query) or die($connect->error);
-          $connect->close();
-          header("Location: ViewAllFaculty.php");
-    }
-?>
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php include "sidebar.php"; ?>
 
@@ -107,12 +77,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Faculty Registration</h1>
+                <h1 class="m-0">Change Password</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="ExamDept.php">Home</a></li>
-                <li class="breadcrumb-item active">Faculty</li>
+                <li class="breadcrumb-item active">Credentials</li>
                 </ol>
             </div><!-- /.col -->
             </div><!-- /.row -->
@@ -128,73 +98,23 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Registration Form</h3>
+                <h3 class="card-title">Update Password</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form method="post">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="dept">Select Department</label>
-                    <select class="form-select" aria-label="Default select example" id="dept" name="dept">
-                      <option value="select" selected>Select</option>
-                    <?php
-                      $query = "select id, name from coursedept where college = '".$cname."'";
-                      $result = $connect->query($query) or die($connect->error);
-                      while($data = $result->fetch_assoc()):?>
-                        <option value=<?php echo $data['id'];?>><?php echo $data['name'];?></option>
-                      <?php endwhile;?>
-                    </select>
+                    <label for="oldpass">Enter Old Password</label>
+                    <input class="form-control" type="text" id="oldpass" placeholder="Old Password" name="oldpass" required>
                   </div>
                   <div class="form-group">
-                    <label for="fname">Enter Faculty Name</label>
-                    <input class="form-control" type="text" id="fname" placeholder="Faculty Name" name="fname" required>
+                    <label for="newpass">Enter New Password</label>
+                    <input class="form-control" type="text" id="newpass" placeholder="New Password" name="newpass" required>
                   </div>
-                  <div class="form-group">
-                    <label for="sname">Enter Subject Name</label>
-                    <input class="form-control" type="text" id="sname" placeholder="Subject Name" name="sname" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="scode">Enter Subject Code</label>
-                    <input class="form-control" type="text" id="scode" placeholder="Subject Code" name="scode" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="sem">Select Semester</label>
-                    <select class="form-select" aria-label="Default select example" id="sem" name="sem">
-                    <option selected>Select</option>
-                    <option value="1">I</option>
-                    <option value="2">II</option>
-                    <option value="3">III</option>
-                    <option value="4">IV</option>
-                    <option value="5">V</option>
-                    <option value="6">VI</option>
-                    <option value="7">VII</option>
-                    <option value="8">VIII</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Enter Email</label>
-                    <input class="form-control" type="text" id="email" placeholder="Email" name="email" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="mobile-textbox">Mobile</label>
-                    <input class="form-control" type="number" id="mobile-textbox" placeholder="Mobile Number" name="mobile" required>
-                  </div>
-                  <!-- <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div> -->
                 </div>
                 <div class="card-footer">
-                    <input class="btn btn-primary" type="submit" value="Register" id="regbtn" name="submit">
+                    <input class="btn btn-primary" type="submit" value="Update" id="regbtn" name="submit">
                 </div>
               </form>
             </div>
@@ -206,3 +126,43 @@
 </body>
 </html>
 
+
+
+<?php
+    if(isset($_POST['submit']))
+    {
+        $oldpass = $_POST['oldpass'];
+        $newpass = $_POST['newpass'];
+        
+        $connect = mysqli_connect("localhost", "root", "");
+        $connect->select_db("questionpaper");
+        $query = " select password from examdept where password = '".$oldpass."'";
+        $result = $connect->query($query);
+
+        if($result->num_rows > 0)
+        {
+            $query = "update examdept set password = '".$newpass."' where password = '".$oldpass."'"; 
+            $connect->query($query);
+            ?>
+            <script>
+                swal("Password update successfull !", "", "success")
+                .then((value) => {
+                    window.location.replace("ExamDept.php");
+                });
+            </script>
+            <?php
+        }
+        else
+        {
+            ?>
+            <script>
+                swal("Invalid old password !", "", "error")
+                .then((value) => {
+                    window.location.replace("ExamDept.php");
+                });
+            </script>
+            <?php
+        }
+        $connect->close();
+    }
+?>

@@ -1,7 +1,7 @@
 <?php
   session_start();
-  if(!isset($_SESSION['AdminLogin']))
-    header('Location: AdminLogin.php');
+  if(!isset($_SESSION['DeptLogin']))
+    header('Location: DeptLogin.php');
 ?>
 
 <!DOCTYPE html>
@@ -66,6 +66,17 @@
     <link rel="stylesheet" href="sidebar.css">
     <title>All Faculties</title>
 </head>
+
+<?php
+  $hname = $_SESSION['hname'];
+  $connect = mysqli_connect("localhost", "root", "");
+  $connect->select_db("questionpaper");
+  $query = "select cname from examdept where hname = '$hname'";
+  $result = $connect->query($query);
+  $data = $result->fetch_assoc();
+  $cname = $data['cname'];
+?>
+
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php include "sidebar.php"; ?>
     
@@ -80,7 +91,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="Admin.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="ExamDept.php">Home</a></li>
               <li class="breadcrumb-item active">Faculty</li>
             </ol>
           </div><!-- /.col -->
@@ -97,7 +108,7 @@
         <?php
             $connect = mysqli_connect("localhost", "root", "");
             $connect->select_db("questionpaper");
-            $query = "select * from registerfaculty";
+            $query = "select * from registerfaculty where cname = '$cname'";
             $result = $connect->query($query);
         ?>
             <div class="row justify-content-center">

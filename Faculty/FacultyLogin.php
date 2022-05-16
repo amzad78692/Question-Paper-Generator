@@ -40,6 +40,7 @@
                                     {
                                         
                                         session_start();
+                                        $_SESSION['FacultyLogin'] = true;
                                         $_SESSION["fname"] = $row['fname'];
                                         $_SESSION["sname"] = $row['sname'];
                                         $_SESSION["scode"] = $row['scode'];

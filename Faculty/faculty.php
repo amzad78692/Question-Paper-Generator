@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['FacultyLogin']))
+    header('Location: FacultyLogin.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,18 +62,9 @@
     <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <!-- <script src="../dist/js/demo.js"></script> -->
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
     <title>Faculty Dashboard</title>
 </head>
-
-<?php
-    session_start();
-    $_SESSION['fname'] = $_SESSION['fname'];
-?>
-
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php include "sidebar.php"; ?>
     

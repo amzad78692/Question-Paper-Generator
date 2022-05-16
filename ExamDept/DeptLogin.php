@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="DeptLogin.css">
-        <title>Registration Faculty</title>
+        <title>Department Login</title>
 
         <?php
             function login()
@@ -24,6 +24,7 @@
                 {
                     
                     session_start();
+                    $_SESSION['DeptLogin'] = true;
                     $_SESSION["hname"] = $row['hname'];
                     $connect->close();
                     header("Location:ExamDept.php");

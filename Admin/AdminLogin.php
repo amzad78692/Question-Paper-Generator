@@ -46,7 +46,8 @@
 
                                     if($result->num_rows >0)
                                     {
-                                        
+                                        session_start();
+                                        $_SESSION['AdminLogin'] = true;
                                         header("Location:Admin.php");
                                         exit();
                                     }

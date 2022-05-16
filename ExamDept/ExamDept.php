@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['DeptLogin']))
+    header('Location: DeptLogin.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,16 +62,17 @@
     <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <!-- <script src="../dist/js/demo.js"></script> -->
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
     <title>Department Dashboard</title>
 </head>
 
 <?php
-    session_start();
-    $_SESSION['hname'] = $_SESSION['hname'];
+    $connect = mysqli_connect("localhost", "root", "");
+    $connect->select_db("questionpaper");
+    $query = "select cname from examdept where hname = '".$_SESSION['hname']."'";
+    $result = $connect->query($query);
+    $data = $result->fetch_assoc();
+    $cname = $data['cname'];
 ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -102,12 +109,9 @@
               <div class="inner">
                 <h3>
                     <?php
-                        $connect = mysqli_connect("localhost", "root", "");
-                        $connect->select_db("questionpaper");
-                        $query = "select sname from registerfaculty where fname = '".$_SESSION['fname']."'";
-                        $result = $connect->query($query) or die($connect->error);
+                        $query = "select sname from registerfaculty where cname = '$cname'";
+                        $result = $connect->query($query);
                         echo $result->num_rows;
-                        $connect->close();
                     ?>
                 </h3>
                 <p>Faculties</p>
@@ -115,7 +119,7 @@
               <div class="icon">
                 <i class="ion"><img src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-faculty-university-flaticons-flat-flat-icons-2.png"/></i>
               </div>
-              <a href="ViewAllSub.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="ViewAllFaculty.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -125,10 +129,8 @@
               <div class="inner">
                 <h3>
                 <?php
-                        $connect = mysqli_connect("localhost", "root", "");
-                        $connect->select_db("questionpaper");
-                        $query = "select question from question where fname = '".$_SESSION['fname']."'";
-                        $result = $connect->query($query) or die($connect->error);
+                        $query = "select name from course where cname = '$cname'";
+                        $result = $connect->query($query);
                         echo $result->num_rows;
                     ?>
                 </h3>
@@ -137,7 +139,7 @@
               <div class="icon">
                 <i class="ion"><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-course-resume-flaticons-lineal-color-flat-icons.png"/></i>
               </div>
-              <a href="ViewAllQues.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="ViewAllCourse.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <div class="col-lg-3 col-6">
@@ -148,8 +150,8 @@
                     <?php
                         $connect = mysqli_connect("localhost", "root", "");
                         $connect->select_db("questionpaper");
-                        $query = "select sname from registerfaculty where fname = '".$_SESSION['fname']."'";
-                        $result = $connect->query($query) or die($connect->error);
+                        $query = "select sname from paper where cname = '$cname'";
+                        $result = $connect->query($query);
                         echo $result->num_rows;
                         $connect->close();
                     ?>
@@ -159,7 +161,7 @@
               <div class="icon">
                 <i class="ion"><img src="https://img.icons8.com/nolan/64/questions.png"/></i>
               </div>
-              <a href="ViewAllSub.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="ViewAllPaper.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['AdminLogin']))
+    header('Location: AdminLogin.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,13 +61,10 @@
     <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <!-- <script src="../dist/js/demo.js"></script> -->
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
     <link rel="stylesheet" href="Admin.css">
     <link rel="stylesheet" href="sidebar.css">
-    <title>Admin Dashboard</title>
+    <title>Generate Paper</title>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php include "sidebar.php"; ?>
@@ -77,7 +80,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="">Home</a></li>
+              <li class="breadcrumb-item"><a href="Admin.php">Home</a></li>
               <li class="breadcrumb-item active">Question Paper</li>
             </ol>
           </div><!-- /.col -->

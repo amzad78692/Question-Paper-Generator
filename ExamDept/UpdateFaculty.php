@@ -10,12 +10,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Faculty</title>
+    <title>Update Faculty</title>
     <!-- <link rel="stylesheet" href="IdExamDept.css"> -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>import swal from 'sweetalert';</script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
         <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -69,35 +69,40 @@
     <script src="../dist/js/pages/dashboard.js"></script>
 </head>
 
-<?php 
-    $connect = mysqli_connect('localhost', 'root', '');
-    mysqli_select_db($connect, 'questionpaper');
-    $query = "select cname from examdept where hname='".$_SESSION['hname']."'";
-    $result = $connect->query($query) or die($connect->error);
+<?php
+    $oldfname = $_GET["update"];
+    $connect = mysqli_connect("localhost", "root", "");
+    $connect->select_db("questionpaper");
+    $query = "SELECT * FROM registerfaculty WHERE fname = '$oldfname'";
+    $result = $connect->query($query);
     $data = $result->fetch_assoc();
-    $cname = $data['cname'];
-    if(isset($_POST['submit'])){
-        $dname = $_POST['dept'];
-        $fname = $_POST['fname'];
-        $sname = $_POST ['sname'];
-        $scode = $_POST ['scode'];
-        $sem = $_POST['sem'];
-        $email = $_POST ['email'];
-        $mobile = $_POST ['mobile'];
-          // Generating the username and password.
-          $username = $scode."@".rand(100, 999);
-          $password = uniqid();
+    $cname = $data["cname"];
+    $dname = $data["dname"];
+    $fname = $data["fname"];
+    $sname = $data["sname"];
+    $scode = $data["scode"];
+    $email = $data["email"];
+    $mobile = $data["mobile"];
+    $connect->close();
+    // Updating record
+    if(isset($_POST['submit']))
+    {
+        $dname = $_POST["dname"];
+        $cname = $_POST["cname"];
+        $fname = $_POST["fname"];
+        $sname = $_POST["sname"];
+        $scode = $_POST["scode"];
+        $email = $_POST["email"];
+        $mobile = $_POST["mobile"];
 
-          
-
-          $query = "insert into registerfaculty (cname, dname, fname,sname, scode, sem, email, mobile, username, password) values('".$cname."',
-          '".$dname."', '".$fname."', '".$sname."', '".$scode."', '".$sem."', '".$email."', '".$mobile."', '".$username."', '".$password."')";
-
-          $connect->query($query) or die($connect->error);
-          $connect->close();
-          header("Location: ViewAllFaculty.php");
+        $connect = mysqli_connect("localhost", "root", "");
+        $connect->select_db("questionpaper");
+        $query = "UPDATE registerfaculty SET cname = '$cname', dname = '$dname', fname = '$fname', sname = '$sname', scode = '$scode', email = '$email', mobile = $mobile WHERE fname = '$oldfname'";
+        $connect->query($query);
+        header("Location:ViewAllFaculty.php");
     }
 ?>
+
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php include "sidebar.php"; ?>
 
@@ -107,11 +112,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Faculty Registration</h1>
+                <h1 class="m-0">Update Faculty Details</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="ExamDept.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="">Home</a></li>
                 <li class="breadcrumb-item active">Faculty</li>
                 </ol>
             </div><!-- /.col -->
@@ -128,57 +133,39 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Registration Form</h3>
+                <h3 class="card-title">Update Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form method="post">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="dept">Select Department</label>
-                    <select class="form-select" aria-label="Default select example" id="dept" name="dept">
-                      <option value="select" selected>Select</option>
-                    <?php
-                      $query = "select id, name from coursedept where college = '".$cname."'";
-                      $result = $connect->query($query) or die($connect->error);
-                      while($data = $result->fetch_assoc()):?>
-                        <option value=<?php echo $data['id'];?>><?php echo $data['name'];?></option>
-                      <?php endwhile;?>
-                    </select>
+                    <label for="college-name-textbox">College Name</label>
+                    <input class="form-control" type="text" id="college-name-textbox" placeholder="College Name" name="cname" value="<?php echo $cname ?>" required>
                   </div>
                   <div class="form-group">
-                    <label for="fname">Enter Faculty Name</label>
-                    <input class="form-control" type="text" id="fname" placeholder="Faculty Name" name="fname" required>
+                    <label for="dept-name-textbox">Department Name</label>
+                    <input class="form-control" type="text" id="dept-name-textbox" placeholder="Department Name" name="dname" value="<?php echo $dname ?>" required>
                   </div>
                   <div class="form-group">
-                    <label for="sname">Enter Subject Name</label>
-                    <input class="form-control" type="text" id="sname" placeholder="Subject Name" name="sname" required>
+                    <label for="faculty-name-textbox">Faculty Name</label>
+                    <input class="form-control" type="text" id="faculty-name-textbox" placeholder="Faculty Name" name="fname" value="<?php echo $fname ?>" required>
                   </div>
                   <div class="form-group">
-                    <label for="scode">Enter Subject Code</label>
-                    <input class="form-control" type="text" id="scode" placeholder="Subject Code" name="scode" required>
+                    <label for="subject-name-textbox">Subject Name</label>
+                    <input class="form-control" type="text" id="subject-name-textbox" placeholder="Subject Name" name="sname" value="<?php echo $sname ?>" required>
                   </div>
                   <div class="form-group">
-                    <label for="sem">Select Semester</label>
-                    <select class="form-select" aria-label="Default select example" id="sem" name="sem">
-                    <option selected>Select</option>
-                    <option value="1">I</option>
-                    <option value="2">II</option>
-                    <option value="3">III</option>
-                    <option value="4">IV</option>
-                    <option value="5">V</option>
-                    <option value="6">VI</option>
-                    <option value="7">VII</option>
-                    <option value="8">VIII</option>
-                    </select>
+                    <label for="subject-code-textbox">Subject Code</label>
+                    <input class="form-control" type="text" id="subject-code-textbox" placeholder="Subject Code" name="scode" value="<?php echo $scode ?>" required>
                   </div>
                   <div class="form-group">
-                    <label for="email">Enter Email</label>
-                    <input class="form-control" type="text" id="email" placeholder="Email" name="email" required>
+                    <label for="email-textbox">Email</label>
+                    <input class="form-control" type="text" id="email-textbox" placeholder="Email" name="email" value="<?php echo $email ?>" required>
                   </div>
                   <div class="form-group">
                     <label for="mobile-textbox">Mobile</label>
-                    <input class="form-control" type="number" id="mobile-textbox" placeholder="Mobile Number" name="mobile" required>
+                    <input class="form-control" type="number" id="mobile-textbox" placeholder="Mobile Number" name="mobile" value="<?php echo $mobile ?>" required>
                   </div>
                   <!-- <div class="form-group">
                     <label for="exampleInputFile">File input</label>
@@ -194,7 +181,7 @@
                   </div> -->
                 </div>
                 <div class="card-footer">
-                    <input class="btn btn-primary" type="submit" value="Register" id="regbtn" name="submit">
+                    <input class="btn btn-primary" type="submit" value="Update" id="regbtn" name="submit">
                 </div>
               </form>
             </div>

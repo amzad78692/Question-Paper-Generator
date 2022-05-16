@@ -74,7 +74,7 @@
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="ViewQuesPaper.php" class="nav-link active">
+            <a href="ViewAllPaper.php" class="nav-link active">
               <i class="nav-icon"><img src="https://img.icons8.com/nolan/32/questions.png"/></i>
               <p>
                 View Question Paper
@@ -90,7 +90,7 @@
             </a>
           </li>
           <li class="nav-item menu-open">
-            <a href="../index.php" class="nav-link active">
+            <a href="Logout.php" class="nav-link active">
               <i class="nav-icon"><img src="https://img.icons8.com/fluency/32/000000/exit.png"/></i>
               <p>
                 Logout

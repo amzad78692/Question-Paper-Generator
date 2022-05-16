@@ -1,7 +1,7 @@
 <?php
   session_start();
-  if(!isset($_SESSION['AdminLogin']))
-    header('Location: AdminLogin.php');
+  if(!isset($_SESSION['DeptLogin']))
+    header('Location: DeptLogin.php');
 ?>
 
 <!DOCTYPE html>
@@ -64,8 +64,19 @@
     <script src="../dist/js/pages/dashboard.js"></script>
     <link rel="stylesheet" href="Admin.css">
     <link rel="stylesheet" href="sidebar.css">
-    <title>All Faculties</title>
+    <title>All Courses</title>
 </head>
+
+<?php
+  $hname = $_SESSION['hname'];
+  $connect = mysqli_connect("localhost", "root", "");
+  $connect->select_db("questionpaper");
+  $query = "select cname from examdept where hname = '$hname'";
+  $result = $connect->query($query);
+  $data = $result->fetch_assoc();
+  $cname = $data['cname'];
+?>
+
 <body class="hold-transition sidebar-mini layout-fixed">
     <?php include "sidebar.php"; ?>
     
@@ -76,12 +87,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">All Faculties</h1>
+            <h1 class="m-0">All Course</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="Admin.php">Home</a></li>
-              <li class="breadcrumb-item active">Faculty</li>
+              <li class="breadcrumb-item"><a href="ExamDept.php">Home</a></li>
+              <li class="breadcrumb-item active">Course</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -97,40 +108,26 @@
         <?php
             $connect = mysqli_connect("localhost", "root", "");
             $connect->select_db("questionpaper");
-            $query = "select * from registerfaculty";
+            $query = "select * from course where cname = '$cname'";
             $result = $connect->query($query);
         ?>
             <div class="row justify-content-center">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>College Name</th>
-                            <th>Department Name</th>
-                            <th>Faculty Name</th>
-                            <th>Subject Name</th>
-                            <th>Subject Code</th>
-                            <th>Email</th>
-                            <th>Mobile</th>
-                            <th>Username</th>
-                            <th>Password</th>
+                            <th>Course Name</th>
+                            <th>Duration</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <?php
                         while($row = $result->fetch_assoc()):?>
                             <tr>
-                                <td><?php echo $row['cname']?></td>
-                                <td><?php echo $row['dname']?></td>
-                                <td><?php echo $row['fname']?></td>
-                                <td><?php echo $row['sname']?></td>
-                                <td><?php echo $row['scode']?></td>
-                                <td><?php echo $row['email']?></td>
-                                <td><?php echo $row['mobile']?></td>
-                                <td><?php echo $row['username']?></td>
-                                <td><?php echo $row['password']?></td>
+                                <td><?php echo $row['name']?></td>
+                                <td><?php echo $row['duration']?></td>
                                 <td>
-                                    <a href="UpdateFaculty.php?update=<?php echo $row['fname']?>" class="btn btn-info">Edit</a>
-                                    <a href="process.php?deletefaculty=<?php echo $row['fname']?>" class="btn btn-danger">Delete</a>
+                                    <a href="UpdateCourse.php?update=<?php echo $row['name']?>" class="btn btn-info">Edit</a>
+                                    <a href="process.php?deletecourse=<?php echo $row['name']?>" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

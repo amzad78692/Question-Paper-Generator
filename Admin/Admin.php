@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['AdminLogin']))
+    header('Location: AdminLogin.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,9 +63,6 @@
     <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <!-- <script src="../dist/js/demo.js"></script> -->
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="../dist/js/pages/dashboard.js"></script>
     <link rel="stylesheet" href="Admin.css">
     <link rel="stylesheet" href="sidebar.css">
@@ -78,7 +82,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="">Home</a></li>
+              <li class="breadcrumb-item"><a href="Admin.php">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
@@ -157,7 +161,7 @@
               <div class="icon">
                 <i class="ion"><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-course-resume-flaticons-lineal-color-flat-icons.png"/></i>
               </div>
-              <a href="#" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="ViewAllCourse.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -180,7 +184,7 @@
               <div class="icon">
                 <i class="ion"><img src="https://img.icons8.com/nolan/64/questions.png"/></i>
               </div>
-              <a href="#" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="ViewAllPaper.php" class="small-box-footer">View All<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
