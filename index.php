@@ -1,36 +1,31 @@
+<?php
+	require_once 'Database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+<!--divinectorweb.com-->
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
-    <title>Question Paper Generator</title>
-    <?php require("Database.php"); ?>
+    <title>Query Wrapping Creator</title>
+    <link rel="stylesheet" href="index.css">    
 </head>
 <body>
-    <div class="Heading">
-        <div id="Logo">
-            <img src="./Images/logo.png" alt="Subharti">
-        </div>
-        <h1>Subharti Institute of Technology &
-             Engineering</h1>
-        <p id="Est">Established...2008 </p>
-        <div id="Naac-logo">
-            <img src="./Images/logo2.png" alt="NAAC-A">
-
-        </div>
-        <div id="MainMenu">
-            <a href="Admin/AdminLogin.php" id="Alogin">Admin Login</a>
-            <a href="ExamDept/DeptLogin.php" id="Edlogin">Examination Department Login</a>
-            <a href="Faculty/FacultyLogin.php" id="Flogin">Faculty Login</a>
-            <a href="About.php" id="About">About</a>
-        </div>
-    </div>
-    <div class="Content">
-        <img src="./Images/img1.png" alt="Image">
-    </div>
+    <header>
+		<div><img src="Images/logo3.png" alt="Logo"></div> 
+		<ul class="nav">  
+			<li><a href="">Home</a></li>
+			<li><a href="Admin/AdminLogin.php">Admin Login</a></li> 
+			<li><a href="ExamDept/DeptLogin.php">Department Login</a></li>
+			<li><a href="Faculty/FacultyLogin.php">Faculty Login</a></li> 
+			<li><a href="About.php">About</a></li> 
+		</ul>
+	</header>
+	
+	<section class="box">  
+		<video src="Images/video.mp4" autoplay muted loop></video>
+		<h1>Query Wrapping Creator</h1> 
+		<h3>Create your question paper in very less time.</h3>
+	</section>
 </body>
 </html>
-

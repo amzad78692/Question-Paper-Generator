@@ -68,7 +68,38 @@
         year varchar(5)
     )";
     $connect->query($query);
+
+    // Creating course table
+    $query = "create table course(
+        id int NOT NULL AUTO_INCREMENT,
+        name varchar(50),
+        cname varchar(50),
+        duration int,
+        PRIMARY KEY (id)
+    )";
+    $connect->query($query);
+
+    // Creating coursedept table
+    $query = "create table coursedept(
+        id int NOT NULL AUTO_INCREMENT,
+        name varchar(50),
+        cname varchar(50),
+        college varchar(50),
+        PRIMARY KEY (id)
+    )";
+    $connect->query($query);
     
+    // Creating paper table
+    $query = "create table paper(
+        sname varchar(50),
+        scode varchar(10),
+        course varchar(50),
+        cname varchar(50),
+        year int,
+        sem int
+    )";
+    $connect->query($query);
+
     // Closing the connection
     $connect->close();
 ?>
