@@ -106,3 +106,79 @@ insert into `registerfaculty` (`cname`, `dname`, `fname`, `sname`, `scode`, `ema
 
 insert into `registerfaculty` (`cname`, `dname`, `fname`, `sname`, `scode`, `email`, `mobile`, `username`, `password`) values ('Faculty of Engineering and Technology', 'Computer Science Engineering', 'Er. Shweta Garg', 'Data Science For Internet of Things', 'BIME-601', 'shweta@gmail.com', '9877564546', 'BIME-601', 'site@123');
 
+
+
+
+
+
+
+
+-- Dumping data into registerfaculty table
+DROP TABLE IF EXISTS `question`;
+
+create table question (
+        question varchar(100),
+        marks int ,
+        level  varchar(10),
+        sname varchar(50),
+        scode varchar(10), 
+        sem  varchar(5),
+        year varchar(5)
+    );
+
+
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' Write a short note on HTTP Protocol', ' 4', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What do you mean by Computer Networks?', ' 3', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' Differentiate between Ring and Star Topology.', ' 6', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What do you mean by Topology?', ' 3', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' Write a short note SNMP Protocol.', ' 4', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' Write a short notes on   Mesh Topology.', ' 4', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('Explain Working of Data Link Layer and Network Layer.', ' 4', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' Explain in Detail working of Transport Layer and the protocols used in it?', ' 6', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' Write a short note on Data Link Layer.', ' 3', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' Explain OSI Model and its different layers in details.', ' 6', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('Write the Difference between IPV4 AND IPV6.', ' 4', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('Explain IPV4 in detail.', ' 3', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What do you mean by Data?.', ' 3', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What do you mean by Multiplexing?', ' 4', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What are the different types of Multiplexing?', ' 6', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What is difference between SNMP and SMTP Protocols', ' 4', ' Easy', 'Compuer Network', 'BCSE-602', ' 6', ' 2022');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What is working of Lexical Analysis?', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What do you mean by Lex Tools
+?', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What do you mean by First() and Follow() Function?', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What is working of Semantical Analyser?', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' Write a Notes on  Left Factory and Left Recursion.', ' 4', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What is the Need of Translator in Computer?', ' 4', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What are the types of Compiler?', ' 4', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('Differentiate between Byte Code and Machine Code.', ' 4', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('Converts Hardware Description Language into Logic Design.', ' 6', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What are the different phases of compiler?', ' 6', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What do you mean by Error Handler and What are the types of Errors?', ' 6', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What is the difference between Single Pass and Multi Pass?', ' 6', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What are the different Error Recovery Strategies?', ' 6', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What is Leftmost and Right most Derivation Tree?', ' 4', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What do you mean BY Associativity and types of its?', ' 4', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What are conflicts in S-R Parsing?', ' 4', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What are different Code Optimization Techniques?', ' 4', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What is Peephole  Optimization Technique?', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What is Loop Optimization Techniques?', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('What is Syntax Directed Translation?', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES('Block diagram of Semantic Analysis.', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+INSERT INTO `question`(`question`, `marks`, `level`, `sname`, `scode`, `sem`, `year`) VALUES(' What is Augmented Grammar?', ' 3', ' Easy', 'Compiler Design', 'BCSE-601',' 6', ' 2022');
+
