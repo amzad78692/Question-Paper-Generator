@@ -136,9 +136,3 @@ $connect->close();
 
 </body>
 </html>
-
-
-
-
-
-

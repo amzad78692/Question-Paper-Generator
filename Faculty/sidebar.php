@@ -5,7 +5,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="faculty.php" class="nav-link">QUERY WRAPPING CREATOR</a>
+        <a href="faculty.php" class="nav-link">AUTOMATED QUESTION PAPER GENERATOR</a>
       </li>
     </ul>
 </nav>

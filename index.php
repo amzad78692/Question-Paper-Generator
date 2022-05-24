@@ -7,7 +7,7 @@
 <!--divinectorweb.com-->
 <head>
     <meta charset="UTF-8">
-    <title>Query Wrapping Creator</title>
+    <title>Automated Question Paper Generator</title>
     <link rel="stylesheet" href="index.css">    
 </head>
 <body>
@@ -24,7 +24,7 @@
 	
 	<section class="box">  
 		<video src="Images/video.mp4" autoplay muted loop></video>
-		<h1>Query Wrapping Creator</h1> 
+		<h1>Automated Question Paper Generator</h1> 
 		<h3>Create your question paper in very less time.</h3>
 	</section>
 </body>
